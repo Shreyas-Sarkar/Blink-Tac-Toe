@@ -12,12 +12,20 @@ function App() {
     setGameStarted(true);
   };
 
+  const restartGame = () => {
+    setPlayerCategories({});
+    setGameStarted(false);
+  };
+
   return (
     <div className="app">
       {!gameStarted ? (
         <LandingPage onStart={startGame} />
       ) : (
-        <GameBoard playerCategories={playerCategories} />
+        <GameBoard
+          playerCategories={playerCategories}
+          onRestart={restartGame}
+        />
       )}
     </div>
   );

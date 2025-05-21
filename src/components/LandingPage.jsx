@@ -1,4 +1,3 @@
-// components/LandingPage.jsx
 import React, { useState } from 'react';
 import '../styles/LandingPage.css';
 import EmojiCategorySelector from './EmojiCategorySelector';
@@ -47,7 +46,7 @@ function LandingPage({ onStart }) {
     </section>
 
     <button
-      
+      disabled={!canStart}
       onClick={() => onStart(player1Category, player2Category)}
     >
       Start Game

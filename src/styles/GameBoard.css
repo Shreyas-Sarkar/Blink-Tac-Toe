@@ -1,30 +1,75 @@
+
+.game-container {
+  text-align: center;
+  padding: 4vmin 2vmin;
+}
+
+h2 {
+  font-size: 5vmin;
+  margin-bottom: 4vmin;
+  color: #333;
+}
+
 .game-board {
   width: 90vmin;
   max-width: 500px;
   aspect-ratio: 1 / 1;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 1vmin;
-  margin: 2rem auto;
-  padding: 1vmin;
-  background-color: #eee;
-  border-radius: 10px;
+  gap: 2vmin;
+  background-color: #fffbe7;
+  border: 4px solid #ffbb33;
+  border-radius: 16px;
+  padding: 2vmin;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cell {
   background-color: #fff;
   border: 2px solid #888;
-  font-size: 8vmin;
+  font-size: 7vmin;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s ease, transform 0.2s ease;
   user-select: none;
-  border-radius: 8px;
+  animation: popIn 0.2s ease;
 }
 
 .cell:hover {
-  background-color: #f0f0f0;
+  background-color: #fdf1b8;
+  transform: scale(1.05);
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.game-actions {
+  margin-top: 4vmin;
+}
+
+.primary-button {
+  background-color: #00c853;
+  color: white;
+  border: none;
+  font-size: 4vmin;
+  padding: 2vmin 4vmin;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  background-color: #00b248;
 }
