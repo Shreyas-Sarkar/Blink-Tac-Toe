@@ -60,12 +60,7 @@ function GameBoard({ playerCategories, onRestart }) {
     setTurn(turn === 'player1' ? 'player2' : 'player1');
   };
 
-  const restartGame = () => {
-    setBoard(Array(9).fill(null));
-    setTurn('player1');
-    setHistory({ player1: [], player2: [] });
-    setWinner(null);
-  };
+
 
   return (
     <div className="game-container">
