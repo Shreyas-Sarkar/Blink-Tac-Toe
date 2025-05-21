@@ -1,0 +1,30 @@
+.game-board {
+  width: 90vmin;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1vmin;
+  margin: 2rem auto;
+  padding: 1vmin;
+  background-color: #eee;
+  border-radius: 10px;
+}
+
+.cell {
+  background-color: #fff;
+  border: 2px solid #888;
+  font-size: 8vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  user-select: none;
+  border-radius: 8px;
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
