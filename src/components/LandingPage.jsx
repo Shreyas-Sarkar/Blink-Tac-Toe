@@ -40,7 +40,7 @@ function LandingPage({ onStart, muted, setMuted }) {
         <section className="rules">
           <h2>About the Game</h2>
           <ul>
-            <li>Pick an emoji category for each player.</li>
+            <li>Pick a unique emoji category for each player to start the game.</li>
             <li>You’ll get random emojis from your category to place on the board.</li>
             <li>Only 3 emojis per player are allowed on the board.</li>
             <li>The oldest emoji disappears when placing a new one.</li>
