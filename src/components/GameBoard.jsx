@@ -6,6 +6,8 @@ function GameBoard({ playerCategories, onRestart }) {
   const [turn, setTurn] = useState('player1');
   const [history, setHistory] = useState({ player1: [], player2: [] });
   const [winner, setWinner] = useState(null);
+  const [winningCells, setWinningCells] = useState([]);
+
 
   const emojiMap = {
     Animals: ['🐶', '🐱', '🐵', '🐰'],
@@ -53,10 +55,10 @@ function GameBoard({ playerCategories, onRestart }) {
 
     const winCombo = checkWinner(newBoard, turn);
     if (winCombo) {
-      setWinner(turn);
-      return;
+    setWinner(turn);
+    setWinningCells(winCombo);
+    return;
     }
-
     setTurn(turn === 'player1' ? 'player2' : 'player1');
   };
 
@@ -74,8 +76,12 @@ function GameBoard({ playerCategories, onRestart }) {
 
     <div className="game-board">
         {board.map((cell, index) => (
-        <div key={index} className="cell" onClick={() => handleCellClick(index)}>
-            {cell}
+        <div
+            key={index}
+            className={`cell ${winningCells.includes(index) ? 'winner-cell' : ''}`}
+            onClick={() => handleCellClick(index)}
+        >
+            <span className="emoji">{cell}</span>
         </div>
         ))}
     </div>
