@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/GameBoard.css';
 
-function GameBoard({ playerCategories, onRestart }) {
+function GameBoard({ playerCategories, onRestart, score, setScore }) {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [turn, setTurn] = useState('player1');
   const [history, setHistory] = useState({ player1: [], player2: [] });
@@ -57,6 +57,11 @@ function GameBoard({ playerCategories, onRestart }) {
     if (winCombo) {
     setWinner(turn);
     setWinningCells(winCombo);
+    setScore(prev => ({
+        ...prev,
+        [turn]: prev[turn] + 1,
+    }));
+    // winSound.play();
     return;
     }
     setTurn(turn === 'player1' ? 'player2' : 'player1');
@@ -65,6 +70,12 @@ function GameBoard({ playerCategories, onRestart }) {
 
 
   return (
+    <>
+    <div className="scoreboard">
+    <span>Player 1: {score.player1}</span>
+    <span>Player 2: {score.player2}</span>
+    </div>
+
     <div className="game-container">
     {winner ? (
         <>
@@ -89,11 +100,12 @@ function GameBoard({ playerCategories, onRestart }) {
     {winner && (
         <div className="game-actions">
         <button className="primary-button" onClick={onRestart}>
-            Play Again
+        Play Again
         </button>
         </div>
     )}
     </div>
+    </>
   );
 }
 

@@ -101,3 +101,13 @@ h2 {
     box-shadow: 0 0 20px #ffc107ee;
   }
 }
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  font-size: 4vmin;
+  margin-bottom: 2vmin;
+  color: #333;
+  font-weight: bold;
+}
