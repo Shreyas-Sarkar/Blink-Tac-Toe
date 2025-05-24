@@ -6,8 +6,7 @@ A fast-paced, emoji-powered twist on the classic Tic Tac Toe — with an arcade 
 
 ## 🚀 Live Demo
 
-👉 [View Live Game](https://your-live-url.vercel.app)  
-*(Replace with your actual deployed link)*
+👉 https://blink-tac-toe-steel.vercel.app/
 
 ---
 
