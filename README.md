@@ -43,3 +43,13 @@ A fast-paced, emoji-powered twist on the classic Tic Tac Toe — with an arcade 
 - 💾 Git & GitHub (version control)
 
 ---
+
+## 🧪 Future Enhancements
+
+- 🎭 Emoji placement animations
+- 🌗 Light/Dark Mode toggle
+- 🧼 “Reset Scores” button
+- 🧠 AI Opponent (Single-player Mode)
+- 🌐 Multiplayer over the network
+
+---
